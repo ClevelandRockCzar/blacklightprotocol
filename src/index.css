@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #0A0A14;
+  --text-color: #F0EFF4;
+  --accent-color: #3B82F6;
+  --surface-color: #18181B;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Sora', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Global Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* Magnetic Button Base */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+.magnetic-btn .btn-layer {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-color);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.magnetic-btn:hover .btn-layer {
+  transform: translateY(0);
+}
+
+.magnetic-btn span {
+  position: relative;
+  z-index: 10;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(240, 239, 244, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4 {
+  color: var(--text-color);
+}
+
+.text-signal {
+    color: var(--accent-color) !important;
+}
+
+.bg-signal {
+    background-color: var(--accent-color) !important;
+}
+
+.bg-offwhite {
+    background-color: var(--bg-color) !important;
+}
+
+.bg-paper {
+    background-color: var(--surface-color) !important;
+}
+
+.text-obsidian {
+    color: var(--text-color) !important;
+}
+
+.border-obsidian\/10 {
+    border-color: rgba(240, 239, 244, 0.1) !important;
+}
